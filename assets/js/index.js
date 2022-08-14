@@ -9,7 +9,14 @@ function getComputerChoice() {
 function theGame(computer, user) {
   computer = getComputerChoice()
   user = prompt('Choose your weapon')
+
+  // User Rock VS section
   
+  // User Paper VS section
+
+  // User Scissor VS section
+
+
   return computer + '' + user
 } 
 

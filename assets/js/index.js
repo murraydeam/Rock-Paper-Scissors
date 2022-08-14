@@ -1,3 +1,4 @@
+// The computer decision happens below
 function getComputerChoice() {
   let options = ["Rock", "Paper", "Scissors"];
   randNum = options.length;
@@ -5,5 +6,11 @@ function getComputerChoice() {
   return choice;
 }
 
-getComputerChoice();
+function theGame(computer, user) {
+  computer = getComputerChoice()
+  user = prompt('Choose your weapon')
+  
+  return computer + '' + user
+} 
 
+theGame()

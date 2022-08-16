@@ -6,7 +6,7 @@ function getComputerChoice() {
   return choice;
 }
 
-let playerSelection = (prompt("Choose Rock, Paper, or Scissors").toLowerCase());
+let playerSelection = prompt("Choose Rock, Paper, or Scissors").toLowerCase();
 console.log(playerSelection);
 // let playerSelection = ;
 let computerSelection = getComputerChoice();
@@ -37,6 +37,16 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === "scissors" && computerSelection === "scissors")
   ) {
     let result = "Folks we have got ourselves a tie!";
+    return result;
+  }
+  // Error Check for spelling & input.
+  else if (
+    playerSelection != "rock" ||
+    playerSelection != "paper" ||
+    playerSelection != "scissors"
+  ) {
+    let result =
+      "Check you spelling, your must choose Rock, Paper or Scissors.";
     return result;
   }
 }

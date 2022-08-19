@@ -1,17 +1,21 @@
+let wins = 0;
+let loss = 0;
+let tie = 0;
+let options = ["rock", "paper", "scissors"];
+
 // The computer decision happens below
 function getComputerChoice() {
-  let options = ["rock", "paper", "scissors"];
-  randNum = options.length;
-  choice = options[Math.floor(Math.random() * randNum)];
+  index = options.length
+  choice = options[Math.floor(Math.random() * index)];
   return choice;
 }
 
-let playerSelection = prompt("Choose Rock, Paper, or Scissors").toLowerCase();
-console.log(playerSelection);
-// let playerSelection = ;
-let computerSelection = getComputerChoice();
+// let playerSelection = prompt("Choose Rock, Paper, or Scissors").toLowerCase();
+// console.log(playerSelection);
+// let computerSelection = getComputerChoice();
 
 function playRound(playerSelection, computerSelection) {
+  userWins = 0;
   // User Winning
   if (
     (playerSelection === "rock" && computerSelection === "scissors") ||
@@ -19,6 +23,7 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === "paper" && computerSelection === "rock")
   ) {
     let result = "Well done, you win!";
+    wins++;
     return result;
   }
   // User Lose
@@ -28,6 +33,7 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === "paper" && computerSelection === "paper")
   ) {
     let result = "Sorry bud, maybe next time.";
+    loss++;
     return result;
   }
   // User Tie
@@ -37,6 +43,7 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === "scissors" && computerSelection === "scissors")
   ) {
     let result = "Folks we have got ourselves a tie!";
+    tie++;
     return result;
   }
   // Error Check for spelling & input.
@@ -50,7 +57,22 @@ function playRound(playerSelection, computerSelection) {
     return result;
   }
 }
-console.log(
-  `The computer chose ${computerSelection},\nYou chose ${playerSelection}`
-);
-console.log(playRound(playerSelection, computerSelection));
+
+function game() {
+  for (let i = 0; i <= 5; i++) {
+    console.log(`Round ${i}`);
+    computerSelection = getComputerChoice();
+    playerSelection = prompt("Choose Rock, Paper, or Scissors").toLowerCase();
+    console.log(playRound(playerSelection, computerSelection));
+
+    console.log(`Nice job, user score ${wins}, computer score ${loss}`);
+  }
+}
+
+game();
+
+// Out puts for fun
+// console.log(
+//   `The computer chose ${computerSelection},\nYou chose ${playerSelection}`
+// );
+// console.log(playRound(playerSelection, computerSelection));

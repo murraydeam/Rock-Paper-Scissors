@@ -58,17 +58,6 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-// function game() {
-//   for (let i = 0; i < 5; i++) {
-//     console.log(`Round ${i}`);
-//     computerSelection = getComputerChoice();
-//     playerSelection = prompt("Choose Rock, Paper, or Scissors").toLowerCase();
-//     console.log(playRound(playerSelection, computerSelection));
 
-//     console.log(`Nice job, user score ${wins}, computer score ${loss}`);
-//   }
-// }
-
-// game();
 
 

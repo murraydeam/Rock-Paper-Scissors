@@ -10,10 +10,6 @@ function getComputerChoice() {
   return choice;
 }
 
-// let playerSelection = prompt("Choose Rock, Paper, or Scissors").toLowerCase();
-// console.log(playerSelection);
-// let computerSelection = getComputerChoice();
-
 function playRound(playerSelection, computerSelection) {
   userWins = 0;
   // User Winning
@@ -57,6 +53,46 @@ function playRound(playerSelection, computerSelection) {
     return result;
   }
 }
+
+// RPS-UI
+const body = document.querySelector('body')
+
+const container = document.createElement('div')
+container.setAttribute('id', 'container')
+
+const content = document.createElement('div')
+content.setAttribute('id', 'content')
+content.setAttribute('style', 'display: flex; justify-content: center; gap: 2rem;')
+
+
+body.appendChild(container)
+container.appendChild(content)
+
+
+
+const rockButton = document.createElement('button')
+rockButton.setAttribute('id', 'rockButton')
+rockButton.textContent = 'Rock!'
+content.appendChild(rockButton)
+
+const paperButton = document.createElement('button')
+paperButton.setAttribute('id', 'paperButton')
+paperButton.textContent = 'Paper!'
+content.appendChild(paperButton)
+
+const scissorsButton = document.createElement('button')
+scissorsButton.setAttribute('id', 'scissorsButton')
+scissorsButton.textContent = 'Scissors!'
+content.appendChild(scissorsButton)
+
+scissorsButton.addEventListener('click', () => {
+  alert('Scissors')
+})
+
+
+
+
+
 
 
 

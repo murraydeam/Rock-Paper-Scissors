@@ -86,13 +86,17 @@ function playRound(playerSelection, computerSelection) {
     wins++;
     document.getElementById("winsNum").innerText = wins;
     if (wins > 4) {
+      
       return (
         alert(
           "Great! You have beaten the computer! \n Click 'okay' to play again"
         ),
-        (wins = 0),
-        (loss = 0),
-        (tie = 0)
+        wins = 0,
+        loss = 0,
+        tie = 0,       
+        (document.getElementById("winsNum").innerText = wins),
+        (document.getElementById("lossNum").innerText = loss),
+        (document.getElementById("tieNum").innerText = tie)
       );
     }
     return `${result}\n ${wins} wins, ${loss} losses, ${tie} ties`;
@@ -105,15 +109,18 @@ function playRound(playerSelection, computerSelection) {
   ) {
     let result = "Sorry bud, maybe next time.";
     loss++;
-    document.getElementById("lossNum").innerText = loss;
     if (loss > 4) {
       return (
         alert("Maybe next time! \n Click 'okay' to play again"),
-        (wins = 0),
-        (loss = 0),
-        (tie = 0)
+        wins = 0,
+        loss = 0,
+        tie = 0,     
+        (document.getElementById("winsNum").innerText = wins),
+        (document.getElementById("lossNum").innerText = loss),
+        (document.getElementById("tieNum").innerText = tie)
       );
     }
+    document.getElementById("lossNum").innerText = loss;
     return `${result}\n ${wins} wins, ${loss} losses, ${tie} ties`;
   }
   // User Tie
@@ -130,9 +137,12 @@ function playRound(playerSelection, computerSelection) {
         alert(
           "Try again looks like we have ourself a tie! \n Click 'okay' to play again"
         ),
-        (wins = 0),
-        (loss = 0),
-        (tie = 0)
+        wins = 0,
+        loss = 0,
+        tie = 0,     
+        (document.getElementById("winsNum").innerText = wins),
+        (document.getElementById("lossNum").innerText = loss),
+        (document.getElementById("tieNum").innerText = tie)
       );
     }
     return `${result}\n ${wins} wins, ${loss} losses, ${tie} ties`;

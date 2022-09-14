@@ -1,0 +1,11 @@
+button {
+    background-color: aqua;
+    padding: 16px;
+    margin: 0;
+    border-radius: 25%;
+    border: none;
+}
+
+button:hover {
+    background-color:aquamarine;
+}
